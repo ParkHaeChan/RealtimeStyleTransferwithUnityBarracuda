@@ -228,6 +228,10 @@ opset_version=11,          # the ONNX version to export the model to
 do_constant_folding=True,  # whether to execute constant folding for optimization
 input_names = ['content', 'style'],   # the model's input names
 output_names = ['output'], # the model's output names
+'''
+WARNING
+Don't use dynamic_axex when using onnx model file in the unity barracuda.
+'''
 dynamic_axes={'content' : {0:'batch_size', 2:'width', 3:'height'},    # variable lenght axes
 'style' : {0:'batch_size', 2:'width', 3:'height'},
 'output' : {0:'batch_size', 2:'width', 3:'height'}})
